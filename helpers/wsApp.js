@@ -72,10 +72,10 @@ function ClientGetPage(data){
     var thePage;
     theClient = this.UserData;
     try {
-        thePage = loadJSON ( CWD+'/site/pages/'+data+'.json' );
+        thePage = loadJSON ( globals.DESCDIRECTORY+'/pages/'+data+'.json' );
     }
     catch (e) {
-        thePage = loadJSON ( CWD+'/site/pages/404.json' );
+        thePage = loadJSON ( globals.DESCDIRECTORY+'/pages/404.json' );
     }
     var baseContent="";
     if (thePage.template != "")
@@ -105,10 +105,10 @@ function ClientGetArticle(data){
     var theArticle;
     theClient = this.UserData;
     try {
-        theArticle = loadJSON ( CWD+'/site/articles/'+data+'.json' );
+        theArticle = loadJSON ( globals.DESCDIRECTORY+'/articles/'+data+'.json' );
     }
     catch (e) {
-        theArticle = loadJSON ( CWD+'/site/articles/nocontent.json' );
+        theArticle = loadJSON ( globals.DESCDIRECTORY+'/articles/nocontent.json' );
     }
     var baseContent="";
     if (theArticle.template != "")
