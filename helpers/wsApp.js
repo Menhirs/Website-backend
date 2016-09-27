@@ -62,6 +62,7 @@ function loadJSON(file,nocache=true)
 
 /* get callbacks */
 function Root(req, res, next) {
+    console.log ( "getRoot()");
     res.render('layout', { site: appConfig.title, header: appConfig.header });
 }
 /* post callbacks */
@@ -71,6 +72,7 @@ function ClientGetPage(data){
     this.currentPage = data;
     var thePage;
     theClient = this.UserData;
+    console.log ( "getPage("+data+")");
     try {
         thePage = loadJSON ( globals.DESCDIRECTORY+'/pages/'+data+'.json' );
     }
@@ -104,6 +106,7 @@ function ClientGetPage(data){
 function ClientGetArticle(data){
     var theArticle;
     theClient = this.UserData;
+    console.log ( "getArticle("+data+")");
     try {
         theArticle = loadJSON ( globals.DESCDIRECTORY+'/articles/'+data+'.json' );
     }
